@@ -102,7 +102,7 @@ function updateFilename(output, fiddle_code, html_raw) {
                 fiddle_title = fiddle_title.replace(/\s+/g, '_');
             }
             if (commander.filenameIdentifier) {
-                output = '_'+fiddle_title+'__'+output;
+                output = fiddle_title+'__'+output;
             } else {
                 output = fiddle_title;
             }
