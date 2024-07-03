@@ -102,7 +102,7 @@ function updateFilename(output, fiddle_code, html_raw) {
                 fiddle_title = fiddle_title.replace(/\s+/g, '_');
             }
             if (commander.filenameIdentifier) {
-                output += '_'+fiddle_title;
+                output = '_'+fiddle_title+'__'+output;
             } else {
                 output = fiddle_title;
             }
@@ -221,7 +221,7 @@ async function getFiddle(fiddle_code, fiddle_version, user){
             'Referer': `https://fiddle.jshell.net${complete_path}`
         }
     };
-    logIfVerbose(`Get path: ${complete_path}`); 
+    logIfVerbose(`Get path: ${complete_path}`);
     return await fetchResponse(options);
 }
 
